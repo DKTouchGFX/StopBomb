@@ -5,7 +5,7 @@
 #ifndef SIMULATOR
 #include "knob_interface.hpp"
 #endif
-#include <touchgfx/Utils.hpp>
+// #include <touchgfx/Utils.hpp>
 
 StopBombView::StopBombView()
 {
@@ -15,6 +15,7 @@ StopBombView::StopBombView()
 void StopBombView::setupScreen()
 {
     StopBombViewBase::setupScreen();
+    error_counter = 0;
 }
 
 void StopBombView::tearDownScreen()
@@ -27,18 +28,16 @@ void StopBombView::handleTickEvent()
     tickCounter++;
     if(tickCounter % 180 == 0)
     {
-        circle1.setVisible(true);
-        shape1.setVisible(true);
-        textArea1.setVisible(false);
-        shape1.moveTo(120 - shape1.getWidth(), 120 - shape1.getHeight());
+        resetBomb.setVisible(true);
+        bomb.setVisible(true);
+        txtInfo.setVisible(false);
+        bomb.moveTo(120 - (bomb.getWidth() / 2), 120 - (bomb.getHeight() /2));
         setFrameColor(255, 255, 255); // white
-        error_counter = 0;
-        
     }
     if(tickCounter % 200 == 0)
     {
-        shape1.clearMoveAnimationEndedAction();
-        updatePosition2();
+        bomb.clearMoveAnimationEndedAction();
+        updatePositionBomb();
         tickCounter = 0;
     }
 }
@@ -57,15 +56,15 @@ void StopBombView::incrementValue()
 
 void StopBombView::knobPressed()
 {
-    if(error_counter > 2)
+    if(error_counter >= 2)
     {
-        application().gotoGameOverScreenBlockTransition();
+        application().gotoGameOverScreenNoTransition();
     }
     
-    if( shape1.getX() >= (circle1.getX() - shape1.getWidth()/2) &&
-        shape1.getX() <= (circle1.getX() + circle1.getWidth()/2) &&
-        shape1.getY() >= (circle1.getY() - shape1.getHeight()/2) &&
-        shape1.getY() <= (circle1.getY() + circle1.getHeight()/2) )
+    if( bomb.getX() >= (resetBomb.getX() - bomb.getWidth()/2) &&
+        bomb.getX() <= (resetBomb.getX() + resetBomb.getWidth()/2) &&
+        bomb.getY() >= (resetBomb.getY() - bomb.getHeight()/2) &&
+        bomb.getY() <= (resetBomb.getY() + resetBomb.getHeight()/2) )
     {
         // Hit
         setFrameColor(0, 255, 0); // Green
@@ -94,29 +93,24 @@ void StopBombView::updatePosition()
     int x = centerX + static_cast<int>(radius * std::cos(angle));
     int y = centerY + static_cast<int>(radius * std::sin(angle));
 
-    touchgfx_printf("\nNew circle position [x: %d y: %d]", x, y);
+    resetBomb.startMoveAnimation(x - resetBomb.getWidth() / 2, y - resetBomb.getHeight() / 2, 0, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseIn);
 
-    circle1.setXY(x - circle1.getWidth() / 2, y - circle1.getHeight() / 2);
-
-    invalidate();
+    resetBomb.invalidate();
 }
 
-void StopBombView::updatePosition2()
+void StopBombView::updatePositionBomb()
 {
-    // Keep angle in [0, 2*pi] to avoid floating overflow
-    angle2 = rand() % 628; // 0 to 627
-    
-    
-    angle2 /= 100.0f; // Convert to radians (0 to 6.27)
+    angleBomb = rand() % 628; // 0 to 627   
+    angleBomb /= 100.0f;      // Convert to radians (0 to 6.27)
 
-    int x = centerX2 + static_cast<int>(radius2 * std::cos(angle2));
-    int y = centerY2 + static_cast<int>(radius2 * std::sin(angle2));
+    int x = centerXBomb + static_cast<int>(radiusBomb * std::cos(angleBomb));
+    int y = centerYBomb + static_cast<int>(radiusBomb * std::sin(angleBomb));
 
-    touchgfx_printf("\nNew shape position [x: %d y: %d]", x, y);
+    // touchgfx_printf("\nNew shape position [x: %d y: %d]", x, y);
 
-    shape1.startMoveAnimation(x - shape1.getWidth() / 2, y - shape1.getHeight() / 2, 90, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseIn);
+    bomb.startMoveAnimation(x - bomb.getWidth() / 2, y - bomb.getHeight() / 2, 90, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseIn);
 
-    invalidate();
+    bomb.invalidate();
 }
 
 void StopBombView::setFrameColor(uint8_t r, uint8_t g, uint8_t b)

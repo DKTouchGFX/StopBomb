@@ -21,20 +21,15 @@ void GameOverView::handleTickEvent()
     tickCounter++;
     if(tickCounter % 31 == 0)
     {
-        if(Color::getRed(box1.getColor()) == 255)
+        if(Color::getRed(boxBackground.getColor()) == 255)
         {
-            box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+            boxBackground.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
         }
         else
         {
-            box1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+            boxBackground.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
         }
         tickCounter = 0;
-        box1.invalidate();
+        boxBackground.invalidate();
     }
-}
-
-void GameOverView::knobPressed()
-{
-    application().gotoStopBombScreenNoTransition();
 }

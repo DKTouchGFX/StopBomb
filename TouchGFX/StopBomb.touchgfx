@@ -7,7 +7,7 @@
         "Components": [
           {
             "Type": "Shape",
-            "Name": "shape1",
+            "Name": "bomb",
             "X": 22,
             "Width": 20,
             "Height": 20,
@@ -39,8 +39,8 @@
           },
           {
             "Type": "Circle",
-            "Name": "circle1",
-            "X": 200,
+            "Name": "resetBomb",
+            "X": 196,
             "Y": 100,
             "Width": 40,
             "Height": 40,
@@ -74,7 +74,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1",
+            "Name": "txtInfo",
             "X": 19,
             "Y": 84,
             "Width": 203,
@@ -130,7 +130,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "GameOver"
             }
           }
@@ -141,7 +141,7 @@
         "Components": [
           {
             "Type": "Box",
-            "Name": "box1",
+            "Name": "boxBackground",
             "Width": 240,
             "Height": 240,
             "Color": {
@@ -150,27 +150,38 @@
           },
           {
             "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 37,
+            "Y": 96,
+            "Width": 167,
+            "Height": 48,
+            "TextId": "__SingleUse_G9BK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "textArea1",
-            "X": 62,
-            "Y": 79,
-            "Width": 117,
-            "Height": 82,
+            "X": 65,
+            "Y": 135,
+            "Width": 111,
+            "Height": 41,
             "TextId": "__SingleUse_CBZY",
             "TextRotation": "0",
             "AutoSize": true
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2",
+            "Name": "textArea1_1",
             "X": 62,
-            "Y": 120,
-            "Width": 114,
-            "Height": 10,
-            "TextId": "__SingleUse_G9BK",
+            "Y": 55,
+            "Width": 117,
+            "Height": 41,
+            "TextId": "__SingleUse_X903",
             "TextRotation": "0",
-            "Color": {
-              "Red": 255
-            },
             "AutoSize": true
           }
         ],
@@ -193,18 +204,8 @@
               "ButtonKey": 53
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "knobPressed"
-            }
-          },
-          {
-            "InteractionName": "ChangeScreenToStopBomb",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "StopBomb"
             }
           }

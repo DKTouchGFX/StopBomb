@@ -6,11 +6,14 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_G9BK" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Press knob to continue</Translation>
+      <Text Id="__SingleUse_X903" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">GAME</Translation>
+      </Text>
+      <Text Id="__SingleUse_G9BK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Press the knob &#10;to continue</Translation>
       </Text>
       <Text Id="__SingleUse_CBZY" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">GAME&#10;OVER</Translation>
+        <Translation Language="GB">OVER</Translation>
       </Text>
       <Text Id="__SingleUse_Q7DE" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Fang bomben&#10;og tryk på knappen &#10;for at nulstille den.</Translation>

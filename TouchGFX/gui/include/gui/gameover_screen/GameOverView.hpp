@@ -12,7 +12,6 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void handleTickEvent();
-    virtual void knobPressed();
 protected:
     uint32_t tickCounter = 0;
 
