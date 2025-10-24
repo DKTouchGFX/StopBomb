@@ -1,0 +1,111 @@
+# CubeMX
+.mxproject
+backup_*.ioc
+
+# TouchGFX
+TouchGFX/*_backup.touchgfx
+TouchGFX/build/
+TouchGFX/config/
+TouchGFX/generated/
+TouchGFX/simulator/
+TouchGFX/target.config
+Middlewares/ST/touchgfx/
+Middlewares/ST/touchgfx_components/
+Middlewares/ST/touchgfx_backup*/
+gcc/components.mk
+
+# IAR
+EWARM/settings/
+EWARM/TSDHD*/
+EWARM/*.dep
+EWARM/*.ewt
+EWARM/*.ipcf
+EWARM/*.custom_argvars
+
+# CubeIDE
+STM32CubeIDE/.settings/
+STM32CubeIDE/Debug/
+STM32CubeIDE/Release/
+
+# Keil
+MDK-ARM/RTE/
+MDK-ARM/TSDHD*/
+MDK-ARM/DebugConfig/
+MDK-ARM/*.lst
+MDK-ARM/*.out
+MDK-ARM/*vguix.*
+
+# CMake
+build/
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.axf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+*.lst
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+!Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc/libtouchgfx-float-abi-hard.a
+*.la
+*.lo
+.vs/
+.history/
+*.pdom
+
+# Backup files
+*.cache
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.pdf
+*.bin
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.log
+*.htm
+*.dep
+*.crf
+obj/
+*.cache
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Log files
+jlink.log

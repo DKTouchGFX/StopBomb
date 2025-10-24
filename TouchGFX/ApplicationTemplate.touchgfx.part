@@ -1,0 +1,30 @@
+
+{
+  "Application": {
+    "Name": "TSDHD-TSS013-1",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "AvailableColorDepths": [ 16 ],
+    "AvailableLCDs":
+    {
+      "16": "LCD16bppSerialFlash"
+    },
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 240
+      }
+    ],
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "Family": "STM32C0",
+    "SubFamily": "STM32C0x1",
+    "Platform": "m0+",
+    "Toolchain": "STM32CubeIDE",
+    "ProjectFile": "../TSDHD-TSS013-1.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [
+    ],
+    "AdditionalFeatures": [
+    ]
+  },
+  "Version": "4.25.0"
+}

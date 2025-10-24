@@ -1,0 +1,7 @@
+[ProjectFiles]
+HeaderPath=
+[Groups]
+Application/User/Core/=../Core/Src/RVA15MD_DisplayDriver.c;../Core/Src/RVA15MD_DataReader.c;../Core/Src/knob_interface.cpp
+Application/User/TouchGFX/target=../TouchGFX/target/KeySampler.cpp
+[Others]
+Define=KNOB_INTERFACE

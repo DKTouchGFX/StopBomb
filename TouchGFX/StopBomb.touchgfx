@@ -1,0 +1,295 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "StopBomb",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Shape",
+            "Name": "shape1",
+            "X": 22,
+            "Width": 20,
+            "Height": 20,
+            "Visible": false,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Points": [
+              {
+                "X": 10.0
+              },
+              {
+                "X": 20.0,
+                "Y": 10.0
+              },
+              {
+                "X": 10.0,
+                "Y": 20.0
+              },
+              {
+                "Y": 10.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Moveable": true
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle1",
+            "X": 200,
+            "Y": 100,
+            "Width": 40,
+            "Height": 40,
+            "Visible": false,
+            "Color": {
+              "Red": 255
+            },
+            "CenterX": 20.0,
+            "CenterY": 20.0,
+            "Radius": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "Moveable": true
+          },
+          {
+            "Type": "Circle",
+            "Name": "frame",
+            "Width": 240,
+            "Height": 240,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 120.0,
+            "CenterY": 120.0,
+            "Radius": 118.0,
+            "LineWidth": 2.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 19,
+            "Y": 84,
+            "Width": 203,
+            "Height": 72,
+            "TextId": "__SingleUse_Q7DE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Knop_Turn_Left",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 52
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "incrementValue"
+            }
+          },
+          {
+            "InteractionName": "Knob_Turn_Right",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 54
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decrementValue"
+            }
+          },
+          {
+            "InteractionName": "KnobPressed",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 53
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "knobPressed"
+            }
+          },
+          {
+            "InteractionName": "ChangeScreenToGameOver",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ActionComponent": "GameOver"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "GameOver",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 240,
+            "Height": 240,
+            "Color": {
+              "Red": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 62,
+            "Y": 79,
+            "Width": 117,
+            "Height": 82,
+            "TextId": "__SingleUse_CBZY",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 62,
+            "Y": 120,
+            "Width": 114,
+            "Height": 10,
+            "TextId": "__SingleUse_G9BK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ChangeBgColor",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 10
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "changeBgColor"
+            }
+          },
+          {
+            "InteractionName": "KnobPressed",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 53
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "knobPressed"
+            }
+          },
+          {
+            "InteractionName": "ChangeScreenToStopBomb",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "StopBomb"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "StopBomb",
+    "Resolution": {
+      "Width": 240,
+      "Height": 240
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "StopBomb",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bppSerialFlash"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 240
+      }
+    ],
+    "PhysicalButtons": [
+      {
+        "Key": 52,
+        "Name": "4 - Left turn"
+      },
+      {
+        "Key": 53,
+        "Name": "5 - Press"
+      },
+      {
+        "Key": 54,
+        "Name": "6 - Right turn"
+      }
+    ],
+    "FrameworkFeatures": {
+      "LCD16bppSerialFlash": {
+        "Id": "LCD16bppSerialFlash",
+        "Features": [
+          {
+            "Id": "TextureMapperImageFormats",
+            "Features": [
+              {
+                "Id": "ARGB8888",
+                "IsEnabled": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "ruby ../Loading/Load_OpenBootloader.rb build/bin/target.hex",
+    "FlashTargetIntCommandOverride": "ruby ../Loading/Load_OpenBootloader.rb build/bin/intflash.hex internal",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32C0",
+    "SubFamily": "STM32C0x1",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m0+",
+    "ProjectFile": "../TSDHD-TSS013-1.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}

@@ -1,0 +1,10 @@
+3.0.0
+First version of TBS
+- STM32CubeMX 6.15.0
+- TouchGFX 4.25.0
+- Firmware Package FW_C0 1.4.0
+- Support for STM32CubeIDE
+- Support for EWARM
+- Support for Keil 6
+- Support for GCC with CMake
+- Support for "Run target" in TouchGFX Designer
