@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>TSDHD-TSS013-1</name>
+	<name>StopBomb</name>
 	<comment/>
 	<projects>
 	</projects>
@@ -33,14 +33,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>TSDHD-TSS013-1.ioc</name>
+			<name>StopBomb.ioc</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TSDHD-TSS013-1.ioc</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/StopBomb.ioc</locationURI>
 		</link>
 		<link>
-			<name>TSDHD-TSS013-1.stldr</name>
+			<name>StopBomb.stldr</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Loading/TSDHD-TSS013-1.stldr</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Loading/StopBomb.stldr</locationURI>
 		</link>
 		<link>
 			<name>Drivers/CMSIS/system_stm32c0xx.c</name>
